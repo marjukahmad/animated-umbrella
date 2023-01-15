@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+   
+
+    <script>
+      function calculate(x, y, op) {
+        if (op == '+') {
+          return x + y;
+        } else if (op == '-') {
+          return x - y;
+        } else if (op == '*') {
+          return x * y;
+        } else if (op == '/') {
+          return x / y;
+        } else {
+          return 'Invalid operator';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <form id="calculator-form">
+      <label for="x">Number 1:</label>
+      <input type="number" id="x" name="x" required>
+      <br>
+      <label for="y">Number 2:</label>
+      <input type="number" id="y" name="y" required>
+      <br>
+      <label for="op">Operator:</label>
+      <select id="op" name="op" required>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <br>
+      <button type="submit">Calculate</button>
+    </form>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <div id="result"></div>
+
+      <script>
+      // JavaScript code goes here
+      console.log('Hello, world!');
+
+
+      window.onload = function() {
+
+        document.getElementById('calculator-form').addEventListener('submit', function(e) {
+  e.preventDefault();  // Prevent the form from being submitted
+
+  // Get the values of the form inputs
+  var x = document.getElementById('x').value;
+  var y = document.getElementById('y').value;
+  var op = document.getElementById('op').value;
+
+  // Call the calculate function and store the result
+  var result = calculate(x, y, op);
+
+  // Display the result in the result div element
+  document.getElementById('result').innerHTML = result;
+});
+
+  // Your code here
+  var element = document.getElementById('my-element');
+  element.innerHTML = 'JavaScript is working!';
+};
+
+    </script>
+    <div id="my-element"></div>
+   
+  </body>
+</html>
